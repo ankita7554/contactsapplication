@@ -1,0 +1,21 @@
+h1 {
+  color: white;
+  margin: 0;
+  text-align: center;
+  width: 80%;
+}
+
+.header {
+  background: #a21d2b;
+  display: flex;
+  width: 100%;
+}
+.register-btn {
+  margin-left: 20px;
+  background: none;
+  color: white;
+}
+.login-btn {
+  background: none;
+  color: white;
+}
