@@ -1,1 +1,33 @@
-<h1>Register works!</h1>
+<h2>Registration Page</h2>
+<div>
+  <form
+    [formGroup]="registerForm"
+    (ngSubmit)="registerComponent()"
+    class="example-form"
+  >
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="name" formControlName="name" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput formControlName="phone" placeholder="phoneNo" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput formControlName="email" placeholder="email" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input
+        matInput
+        password
+        formControlName="password"
+        placeholder="password"
+      />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" class="button">
+      Submit Form
+    </button>
+  </form>
+</div>

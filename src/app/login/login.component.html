@@ -13,37 +13,24 @@
   </mat-form-field>
 </form> -->
 
-<form class="example-form">
+<form
+  class="example-form"
+  (ngSubmit)="loginComponent()"
+  [formGroup]="loginForm"
+>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Email" [formControl]="emailFormControl" />
-    <mat-error
-      *ngIf="
-        emailFormControl.hasError('email') &&
-        !emailFormControl.hasError('required')
-      "
-    >
-      Please enter a valid email address
-    </mat-error>
-    <mat-error *ngIf="emailFormControl.hasError('required')">
-      Email is <strong>required</strong>
-    </mat-error>
+    <input matInput placeholder="Email" formControlName="emailFormControl" />
+    <mat-error *ngIf="true">Email is required</mat-error>
   </mat-form-field>
   <mat-form-field class="example-full-width">
     <input
       matInput
       placeholder="Password"
-      [formControl]="passwordFormControl"
+      formControlName="passwordFormControl"
     />
-    <mat-error
-      *ngIf="
-        passwordFormControl.hasError('email') &&
-        !passwordFormControl.hasError('required')
-      "
-    >
-      Please enter a valid password address
-    </mat-error>
-    <mat-error *ngIf="passwordFormControl.hasError('required')">
-      password is <strong>required</strong>
-    </mat-error>
   </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" class="button">
+    Submit Form
+  </button>
 </form>

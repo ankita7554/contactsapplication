@@ -4,7 +4,7 @@ import {
   MatDialogRef,
   MAT_DIALOG_DATA
 } from '@angular/material/dialog';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-addcontact',
@@ -19,10 +19,6 @@ export class AddcontactComponent implements OnInit {
 
   contactsData = this.data;
 
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-
   ngOnInit() {
     if (this.data) {
       this.updateContact();
@@ -30,16 +26,20 @@ export class AddcontactComponent implements OnInit {
   }
 
   contactForm = new FormGroup({
-    name: new FormControl(''),
-    phone: new FormControl(''),
-    email: new FormControl(''),
-    dateCreated: new FormControl('')
+    name: new FormControl(null, Validators.required),
+    phone: new FormControl(null),
+    email: new FormControl(null),
+    dateCreated: new FormControl(null)
   });
 
   addContact() {
     // this.contactForm.value.dateCreated = this.contactForm.value.dateCreated.toDateString()//;
-    this.contactForm.value.id = this.data.id;
-    this.dialogRef.close(this.contactForm.value);
+    if (this.data) {
+      this.contactForm.value.id = this.data.id;
+    }
+    if (this.contactForm.valid) {
+      this.dialogRef.close(this.contactForm.value);
+    }
   }
 
   updateContact() {

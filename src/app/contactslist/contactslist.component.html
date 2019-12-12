@@ -1,0 +1,75 @@
+<div class="example-header">
+  <mat-form-field>
+    <input
+      matInput
+      (keyup)="applyFilter($event.target.value)"
+      placeholder="Filter"
+    />
+  </mat-form-field>
+</div>
+<div class="mat-elevation-z8  example-container">
+  <mat-progress-bar
+    mode="indeterminate"
+    *ngIf="isDataLoading"
+  ></mat-progress-bar>
+  <mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+      <td mat-cell *matCellDef="let element">
+        <a
+          routerLink="profile"
+          (click)="openProfile(element.id, element.name)"
+          (mouseover)="(hovercard)"
+        >
+          {{ element.name | shorten: 5 | uppercase }}</a
+        >
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Phone</th>
+      <td mat-cell *matCellDef="let element">{{ element.phone }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="dateCreated">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Date Created</th>
+      <td mat-cell *matCellDef="let element">
+        <div class="actions">
+          <div class="date-created">
+            {{ element.dateCreated | date: 'fullDate' }}
+          </div>
+          <mat-card>
+            <mat-icon (click)="editContact(element)">edit</mat-icon>
+            <mat-icon (click)="deleteContact(element)">delete</mat-icon>
+          </mat-card>
+          <!-- <button
+          mat-raised-button
+          class="profileBtn"
+          color="primary"
+          (click)="showProfile()"
+        >
+          Show Profile
+        </button> -->
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[2, 1, 3, 100]"></mat-paginator>
+</div>
+<button
+  mat-fab
+  id="openCreateFormBtn"
+  (click)="createContactDialog()"
+  color="primary"
+>
+  +
+</button>

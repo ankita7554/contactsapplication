@@ -1,0 +1,44 @@
+#openCreateFormBtn {
+  bottom: 50px;
+  right: 50px;
+  position: fixed;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+
+table {
+  width: 100%;
+  margin-top: 30px;
+}
+
+mat-form-field {
+  margin-top: 20px;
+}
+.example-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+.actions {
+  display: flex;
+}
+
+.date-created {
+  margin-top: 20px;
+}
+
+mat-card {
+  margin-left: 50px;
+}
+mat-icon {
+  padding-right: 15px;
+}

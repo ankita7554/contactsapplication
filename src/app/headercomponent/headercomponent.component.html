@@ -2,12 +2,36 @@
   <h1>Contacts Appilication</h1>
 
   <div class="btns">
-    <button mat-raised-button type="submit" class="login-btn" (click)="login()">
+    <button
+      *ngIf="!isLoggedIn"
+      mat-raised-button
+      type="submit"
+      class="login-btn"
+      (click)="login()"
+    >
       Login
     </button>
 
-    <button mat-raised-button type="submit" class="register-btn" (click)="register()">
-            Register
+    <button
+      *ngIf="!isLoggedIn"
+      mat-raised-button
+      type="submit"
+      class="register-btn"
+      (click)="register()"
+    >
+      Register
+    </button>
+
+    <button
+      *ngIf="isLoggedIn"
+      mat-raised-button
+      type="submit"
+      class="logout-btn"
+      (click)="logout()"
+    >
+      Logout
     </button>
   </div>
 </div>
+
+<app-homecomponent></app-homecomponent>

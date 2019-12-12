@@ -1,32 +1,26 @@
-#openCreateFormBtn{
-	bottom:50px;
-	right:50px;
-	position:fixed;
-}
-
 table {
- width: 60%;
- margin-top: 30px;
-
+  width: 60%;
+  margin-top: 30px;
 }
 
-
-mat-form-field{
-	margin-top:20px;
+mat-form-field {
+  margin-top: 20px;
 }
-
 
 .actions {
-	display: flex;
+  display: flex;
 }
 
 .date-created {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 
 mat-card {
-	margin-left:50px;
+  margin-left: 50px;
 }
 mat-icon {
-	    padding-right: 15px;
+  padding-right: 15px;
+}
+p {
+  color: blue;
 }

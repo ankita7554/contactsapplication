@@ -19,3 +19,9 @@ h1 {
   background: none;
   color: white;
 }
+
+.logout-btn {
+  background: none;
+  color: white;
+  margin-left: 20px;
+}
