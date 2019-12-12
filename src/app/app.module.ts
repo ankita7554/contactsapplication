@@ -35,6 +35,7 @@ import { AuthGuard } from './auth-guard-service';
 import { ShortenPipe } from './shorten.pipe';
 import { FiltercontactPipe } from './filtercontact.pipe';
 import { EventsComponent } from './events/events.component';
+import { CreateeventdialogComponent } from './events/createeventdialog/createeventdialog.component';
 
 const approutes: Routes = [
   {
@@ -56,6 +57,11 @@ const approutes: Routes = [
     path: 'registeredusers',
     //canActivate: [AuthGuard],
     component: RegisteredusersComponent
+  },
+  {
+    path: 'events',
+    //canActivate: [AuthGuard],
+    component: EventsComponent
   }
 ];
 
@@ -73,7 +79,8 @@ const approutes: Routes = [
     RegisteredusersComponent,
     ShortenPipe,
     FiltercontactPipe,
-    EventsComponent
+    EventsComponent,
+    CreateeventdialogComponent
   ],
   imports: [
     BrowserModule,
@@ -99,7 +106,8 @@ const approutes: Routes = [
     MatPaginatorModule,
     MatSortModule
   ],
-  entryComponents: [AddcontactComponent, LoginComponent, RegisterComponent],
+  entryComponents: [AddcontactComponent, LoginComponent, RegisterComponent,CreateeventdialogComponent
+  ],
   providers: [AuthGuard, AuthService],
 
   bootstrap: [AppComponent]

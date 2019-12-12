@@ -12,6 +12,7 @@ export class HomecomponentComponent implements OnInit {
   navLinks = [
     { label: 'contacts', path: 'contacts' },
     { label: 'profile', path: 'profile' },
-    { label: 'Users', path: 'registeredusers' }
+    { label: 'Users', path: 'registeredusers' },
+    { label: 'events',path:'events'}
   ];
 }
