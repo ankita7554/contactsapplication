@@ -17,14 +17,17 @@ export class CreateeventdialogComponent implements OnInit {
    constructor(
     public dialogRef: MatDialogRef<AddcontactComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
-  ) {}
-
-eventGroup = new FormGroup({
-    name: new FormControl(null, Validators.required),
-    phone: new FormControl(null),
-    email: new FormControl(null),
-    dateCreated: new FormControl(null)
+  ) {
+    this.eventGroup = new FormGroup({
+    eventName: new FormControl(null, Validators.required)
+    
   });
+  }
+
+// this.eventGroup = new FormGroup({
+//     eventName: new FormControl(null, Validators.required)
+    
+//   });
 
   ngOnInit() {
 
